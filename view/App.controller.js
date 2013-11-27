@@ -14,7 +14,7 @@ sap.ui.controller("sap.ui.demo.myFiori.view.App", {
       page = sap.ui.view({
         id: pageId,
         viewName: "sap.ui.demo.myFiori.view." + pageId,
-        type: "XML"
+        type: "JS"
       });
       page.getController().nav = this;
       app.addPage(page, master);

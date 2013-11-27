@@ -10,7 +10,7 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
     master = sap.ui.jsview("Master", "sap.ui.demo.myFiori.view.Master");
     master.getController().nav = this.getController();
     this.app.addPage(master, true);
-    empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty");
+    empty = sap.ui.jsview("Empty", "sap.ui.demo.myFiori.view.Empty");
     this.app.addPage(empty, false);
     return new sap.m.Shell("Shell", {
       title: "{i18n>ShellTitle}",

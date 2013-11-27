@@ -16,7 +16,7 @@ sap.ui.jsview "sap.ui.demo.myFiori.view.App",
     @app.addPage master, true
     
     # load the empty page
-    empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty")
+    empty = sap.ui.jsview("Empty", "sap.ui.demo.myFiori.view.Empty")
     @app.addPage empty, false
     
     # wrap app with shell
