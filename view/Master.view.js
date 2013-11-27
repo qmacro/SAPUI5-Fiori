@@ -6,34 +6,12 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.Master", {
     
     createContent: function (oController) {
         
-        var oItem = new sap.m.ObjectListItem({
-            type: "{device>/listItemType}",
-            press: oController.handleListItemPress,
-            title: "{SoId}",
-            number: "{GrossAmount}",
-            numberUnit: "{CurrencyCode}",
-            attributes: [
-                new sap.m.ObjectAttribute({
-                    text: "{BuyerName}"
-                })
-            ],
-            firstStatus: [
-                new sap.m.ObjectStatus({
-                    text: "{BillingStatus}",
-                    state: {
-                        path: "BillingStatus",
-                        formatter: new sap.ui.demo.myFiori.util.Formatter.statusState()
-                    }
-                })
-            ]
-        });
-
         return new sap.m.Page({
             title: "{i18n>MasterTitle}",
             subHeader: new sap.m.Bar({
                 contentLeft: [
                     new sap.m.SearchField({
-                        search: ["handleSearch", oController],
+                        search: [oController.handleSearch, oController],
                         width: "100%"
                     })
                 ]
@@ -42,10 +20,30 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.Master", {
                 new sap.m.List({
                     id: "list",
                     mode: "{device>/listMode}",
-                    select: ["handleListSelect", oController],
+                    select: [oController.handleListSelect, oController],
                     items: {
                         path: "/SalesOrderCollection",
-                        template: oItem
+                        template: new sap.m.ObjectListItem({
+                            type: "{device>/listItemType}",
+                            press: [oController.handleListItemPress, oController],
+                            title: "{SoId}",
+                            number: "{GrossAmount}",
+                            numberUnit: "{CurrencyCode}",
+                            attributes: [
+                                new sap.m.ObjectAttribute({
+                                    text: "{BuyerName}"
+                                })
+                            ],
+                            firstStatus: 
+                                new sap.m.ObjectStatus({
+                                    text: "{BillingStatus}",
+                                    state: {
+                                        path: "BillingStatus",
+                                        formatter: sap.ui.demo.myFiori.util.Formatter.statusState
+                                    }
+                                })
+                            
+                        })
                     }
                 })
             ],

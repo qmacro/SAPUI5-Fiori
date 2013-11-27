@@ -13,12 +13,12 @@ sap.ui.jsview("sap.ui.demo.myFiori.view.App", {
 		this.app = new sap.m.SplitApp();
 
 		// load the master page
-		var master = sap.ui.xmlview("Master", "sap.ui.demo.myFiori.view.Master");
+		var master = sap.ui.jsview("Master", "sap.ui.demo.myFiori.view.Master");
 		master.getController().nav = this.getController();
 		this.app.addPage(master, true);
 		
 		// load the empty page
-		var empty = sap.ui.xmlview("Empty", "sap.ui.demo.myFiori.view.Empty");
+		var empty = sap.ui.jsview("Empty", "sap.ui.demo.myFiori.view.Empty");
 		this.app.addPage(empty, false);
 		
 		// wrap app with shell
