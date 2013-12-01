@@ -16,13 +16,13 @@ sap.ui.demo.myFiori.util.Grouper = {
 		var key, text;
 		if (price <= 5000) {
 			key = "A-LE10";
-			text = "A < 5000 " + currency;
+			text = "< 5000 " + currency;
 		} else if (price <= 10000) {
 			key = "B-LE100";
-			text = "B < 10.000  " + currency;
+			text = "< 10.000  " + currency;
 		} else {
 			key = "C-GT100";
-			text = "C > 10.000 " + currency;
+			text = "> 10.000 " + currency;
 		}
 		return {
 			key: key,
