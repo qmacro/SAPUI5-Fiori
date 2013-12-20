@@ -29,3 +29,7 @@ On top of the original sources, I have added experimental comparisons between di
 - [CoffeeScript](https://github.com/qmacro/SAPUI5-Fiori/tree/coffee)
 
 plus CoffeeScript sources for other JavaScript files (such as controllers).
+
+Disclaimer
+----------
+The app sources from the CD168 course, upon which this app instance is based, worked perfectly. Any issues with this particular instance are my fault :-)
