@@ -11,14 +11,17 @@ sap.ui.core.UIComponent.extend("sap.ui.demo.myFiori.Component", {
 			type : "JS",
 			viewData : { component : this }
 		});
+		
+		// get absolut path to the files
+		var rootPath = jQuery.sap.getModulePath("sap.ui.demo.myFiori");
 
 		// set data model on root view
-		var oModel = new sap.ui.model.json.JSONModel("model/mock.json");
+		var oModel = new sap.ui.model.json.JSONModel( rootPath +  "/model/mock.json");
 		oView.setModel(oModel);
 
 		// set i18n model
 		var i18nModel = new sap.ui.model.resource.ResourceModel({
-			bundleUrl : "i18n/messageBundle.properties"
+			bundleUrl :  rootPath + "/i18n/messageBundle.properties"
 		});
 		oView.setModel(i18nModel, "i18n");
 
